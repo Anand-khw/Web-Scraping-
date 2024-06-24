@@ -6,7 +6,6 @@ data=[]
 url="https://shiveshcodes.github.io/wncc-soc.github.io/soc/"
 page1=requests.get(url).text
 soup=BeautifulSoup(page1,'lxml')
-# printhttps://shiveshcodes.github.io(,page1)
 project = soup.find_all('div',class_='rounded hover-wrapper pr-3 pl-3 pt-3 pb-3 bg-white')
 x=1
 for links in project:
