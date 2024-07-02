@@ -7,35 +7,27 @@ from selenium.webdriver.chrome.options import Options
 import pandas as pd
 import time 
 
-# Path to chromedriver
 path = "chromedriver.exe"
-
 data = {'Stock Name':[],'Current Price':[],'%changed':[],'Volume':[]}
 
-# Set up Chrome options
 chrome_options = Options()
-chrome_options.add_argument("--headless")  # Run Chrome in headless mode
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--window-size=1920x1080")
 
 # Set up Chrome service
 service = Service(executable_path=path)
 driver = Chrome(service=service, options=chrome_options)
-
-# Target URL
 url = "https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%2050"
 
-# Example of adding headers
+# Example of adding user agent override
 driver.execute_cdp_cmd('Network.setUserAgentOverride', {
     "userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
 })
 driver.get(url)
 
-# Wait for the table rows using tag name (tr)
-wait = WebDriverWait(driver, 20)  # Increased wait time to 20 seconds
+wait = WebDriverWait(driver, 20)  
 table_rows = wait.until(EC.presence_of_all_elements_located((By.TAG_NAME, "tr")))
 
-# Extract and print the %CHNG values from the 8th <td> in each row
 for row in table_rows:
     try:
         tds = row.find_elements(By.TAG_NAME, 'td')
