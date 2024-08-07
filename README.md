@@ -6,4 +6,5 @@ This repository contains coding projects based on Web Scraping using famous pyth
             color:red;
             font-style:inherit;
         }
+</style>
 <h2 id="section-html"><strong><em>HTML</em></strong></h2>
