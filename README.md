@@ -1,7 +1,8 @@
 This repository contains coding projects based on Web Scraping using famous python libraries 
 <h5>BeautifulSoup </h5>and <h5>Selenium .</h5> 
 <br>
-em{
+<style>
+        em{
             color:red;
             font-style:inherit;
         }
