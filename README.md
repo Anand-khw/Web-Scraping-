@@ -3,10 +3,10 @@ This repository contains coding projects based on Web Scraping using famous pyth
 <br>
 <head>
         <style>
-        em{
-            color:red;
-            font-style:inherit;
-        }
+                em{
+                    color:red;
+                    font-style:inherit;
+                }
         </style>
 </head>
 
